@@ -28,8 +28,11 @@
     
     <string name="main_ui_lbl_mesh_installed">Serval Mesh Installed?</string>
     <string name="main_ui_btn_mesh_installed">Check for Serval</string>
-    <string name="main_ui_lbl_sid_did">Serval DID &amp; SID</string>
+    <string name="main_ui_lbl_sid_did">Get Serval DID &amp; SID</string>
     <string name="main_ui_btn_sid_did">Retrieve Values</string>
+    
+    <string name="main_ui_lbl_state_change">List for changes in state</string>
+    <string name="main_ui_btn_state_change">Start Listening</string>
     
     <!-- serval installed activity strings -->
     <string name="serval_installed_ui_lbl_title">Is Serval Mesh Installed?</string>
@@ -49,15 +52,44 @@
     <string name="serval_did_sid_intent_did">serval-did</string>
     <string name="serval_did_sid_intent_sid">serval-sid</string>
     
-    <string name="serval_did_sid_intent_no_data">Expected Value Missing from Intent</string>
+    <!-- serval state changed activity strings -->
+    
+    <string name="state_changed_ui_lbl_title">Serval State Changes</string>
+    <string name="state_changed_ui_lbl_subtitle">Use a broadcast receiver to receive notifications about when the state of the Serval Mesh software changes</string>
+    
+    <string name="state_changed_ui_lbl_start">Start Receiving</string>
+    <string name="state_changed_ui_lbl_stop">Stop Receiving</string>
+    
+    <string name="state_changed_ui_btn_start">Start</string>
+    <string name="state_changed_ui_btn_stop">Stop</string>
+    
+    <string name="state_changed_ui_lbl_state">Current State: </string>
+    
+    <string name="state_changed_intent_extra">state-value</string>
+    
+    <!-- 
+    	start slightly modified list of state strings 
+    	as sourced from the Serval Mesh strings file
+    -->
+    <string name="state_power_on">Serval Mesh is ON</string>
+    <string name="state_power_off">Serval Mesh is OFF</string>
+    <string name="state_installing">Installing&#8230;</string>
+    <string name="state_upgrading">Upgrading&#8230;</string>
+    <string name="state_starting">Starting&#8230;</string>
+    <string name="state_stopping">Stopping&#8230;</string>
+    <string name="state_broken">Broken!</string>
+    <!-- end of copy from strings file -->
     
     <!-- miscellaneous UI Strings -->
     <string name="misc_ui_btn_back">Back to Main Screen</string>
     <string name="misc_value_missing">Expected Value Missing</string>
+    <string name="misc_intent_no_data">Expected Value Missing from Intent</string>
 
     <!-- system strings -->
     <string name="system_app_name">Serval Mesh Sampler</string>
     <string name="system_serval_mesh_package_name">org.servalproject</string>
+    
     <string name="system_serval_mesh_sid_did_broadcast">org.servalproject.SET_PRIMARY</string>
+    <string name="system_serval_mesh_state_change">org.servalproject.ACTION_STATE</string>
 
 </resources>

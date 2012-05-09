@@ -19,7 +19,7 @@
  */
 package org.servalproject.sampler;
 
-import org.servalproject.sampler.receivers.DidSidReceiver;
+import org.servalproject.sampler.receivers.StateChangeReceiver;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -32,19 +32,23 @@ import android.widget.Button;
 import android.widget.TextView;
 
 /**
- * an activity that can be used to retrieve the Serval DID and SID
+ * an activity that demonstrates how to listen for state
+ * changes in the Serval Mesh software
  */
-public class ServalDidSidActivity extends Activity implements OnClickListener {
+public class StateChangedActivity extends Activity implements OnClickListener {
 	
 	/*
 	 * private class level constants
 	 */
-	private String sTag = "ServalDidSidActivity";
+	private String sTag = "StateChangedActivity";
 	
 	/*
 	 * private class level variables
 	 */
-	private DidSidReceiver receiver = null;
+	private StateChangeReceiver receiver = null;
+	
+	Button startButton = null;
+	Button stopButton  = null;
     
 	/*
 	 * (non-Javadoc)
@@ -53,16 +57,24 @@ public class ServalDidSidActivity extends Activity implements OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.serval_did_sid);
+        setContentView(R.layout.state_changed);
         
         // setup the components of the view
-        Button mButton = (Button) findViewById(R.id.serval_did_sid_ui_btn_back);
+        startButton = (Button) findViewById(R.id.state_changed_ui_btn_start);
+        startButton.setOnClickListener(this);
+        
+        stopButton = (Button) findViewById(R.id.state_changed_ui_btn_stop);
+        stopButton.setOnClickListener(this);
+        stopButton.setEnabled(false);
+        
+        Button mButton = (Button) findViewById(R.id.state_changed_ui_btn_back);
         mButton.setOnClickListener(this);
+        
         
         // register the broadcast receiver
         registerReceiver();
     }
-
+    
     /*
      * (non-Javadoc)
      * @see android.view.View.OnClickListener#onClick(android.view.View)
@@ -72,7 +84,19 @@ public class ServalDidSidActivity extends Activity implements OnClickListener {
 		
 		// determine which button was touched and take the appropriate action
 		switch(v.getId()) {
-		case R.id.serval_did_sid_ui_btn_back:
+		case R.id.state_changed_ui_btn_start:
+			// start listening for state changes
+			startButton.setEnabled(false); // stop the user from using buttons when they shouldn't
+			stopButton.setEnabled(true);
+			registerReceiver(); // start listening for state changes
+			break;
+		case R.id.state_changed_ui_btn_stop:
+			// stop listening for state changes
+			startButton.setEnabled(true); // stop the user from using buttons when they shouldn't
+			stopButton.setEnabled(false);
+			unRegisterReceiver(); // start listening for state changes
+			break;
+		case R.id.state_changed_ui_btn_back:
 			// the back button was pressed
 			finish();
 			break;
@@ -94,32 +118,18 @@ public class ServalDidSidActivity extends Activity implements OnClickListener {
 		 */
 		
 		// show the did
-		TextView mTextView = (TextView) findViewById(R.id.serval_did_sid_ui_txt_did);
+		TextView mTextView = (TextView) findViewById(R.id.state_changed_ui_lbl_state_value);
 		
 		if(intent.getStringExtra(getString(R.string.serval_did_sid_intent_did)) != null) {
-			mTextView.setText(intent.getStringExtra(getString(R.string.serval_did_sid_intent_did)));
+			mTextView.setText(intent.getStringExtra(getString(R.string.state_changed_intent_extra)));
 		} else {
 			// an error has occured has the required information isn't in the intent
-			Log.d(sTag, "missing did in intent from broadcast receiver");
+			Log.d(sTag, "missing value in intent from broadcast receiver");
 			mTextView.setText(R.string.misc_intent_no_data);
 		}
-		
-		// show the sid
-		mTextView = (TextView) findViewById(R.id.serval_did_sid_ui_txt_sid);
-		
-		if(intent.getStringExtra(getString(R.string.serval_did_sid_intent_sid)) != null) {
-			mTextView.setText(intent.getStringExtra(getString(R.string.serval_did_sid_intent_sid)));
-		} else {
-			// an error has occured has the required information isn't in the intent
-			Log.d(sTag, "missing sid in intent from broadcast receiver");
-			mTextView.setText(R.string.misc_intent_no_data);
-		}
-		
-		// stop receiving the broadcast sticky
-		unRegisterReceiver();
 	}
-	
-	/*
+
+    /*
 	 * private method to register the broadcast receiver
 	 */
 	private void registerReceiver() {
@@ -131,9 +141,9 @@ public class ServalDidSidActivity extends Activity implements OnClickListener {
 		
         // register the receiver for updates
         IntentFilter mBroadcastFilter = new IntentFilter();
-        mBroadcastFilter.addAction(getString(R.string.system_serval_mesh_sid_did_broadcast));
+        mBroadcastFilter.addAction(getString(R.string.system_serval_mesh_state_change));
         
-        receiver = new DidSidReceiver();
+        receiver = new StateChangeReceiver();
         registerReceiver(receiver, mBroadcastFilter); 
 	}
 	
@@ -153,9 +163,10 @@ public class ServalDidSidActivity extends Activity implements OnClickListener {
 	 */
 	@Override
 	public void onDestroy() {
-		// ensure that the reciever is no longer registered
+		// ensure that the receiver is no longer registered
 		unRegisterReceiver();
 		super.onDestroy();
 	}
+
 
 }

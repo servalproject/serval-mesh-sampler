@@ -52,6 +52,9 @@ public class MainActivity extends Activity implements OnClickListener {
         
         mButton = (Button) findViewById(R.id.main_ui_btn_sid_did);
         mButton.setOnClickListener(this);
+        
+        mButton = (Button) findViewById(R.id.main_ui_btn_state_change);
+        mButton.setOnClickListener(this);
     }
 
     /*
@@ -72,6 +75,10 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.main_ui_btn_sid_did:
 			mIntent = new Intent(this, org.servalproject.sampler.ServalDidSidActivity.class);
+			startActivity(mIntent);
+			break;
+		case R.id.main_ui_btn_state_change:
+			mIntent = new Intent(this, org.servalproject.sampler.StateChangedActivity.class);
 			startActivity(mIntent);
 			break;
 		default:
