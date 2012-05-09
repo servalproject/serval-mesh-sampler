@@ -40,6 +40,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ServalInstalledActivity" android:label="@string/serval_installed_ui_lbl_title"></activity>
+        <activity android:name=".ServalDidSidActivity" android:launchMode="singleTop"></activity>
     </application>
 
 </manifest>

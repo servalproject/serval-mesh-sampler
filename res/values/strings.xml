@@ -38,11 +38,26 @@
     <string name="serval_installed_ui_lbl_status_yes">Serval Mesh Software is Installed</string>
     <string name="serval_installed_ui_lbl_status_no">Serval Mesh Software is Not Installed</string>
     
+    <!-- serval did and sid activity strings -->
+    <string name="serval_did_sid_ui_lbl_title">Serval Mesh DID and SID</string>
+    <string name="serval_did_sid_ui_lbl_subtitle">Use a broadcast receiver to retrieve the DID (phone number) and SID (subscriber id) that the Serval Mesh software is using</string>
+    <string name="serval_did_sid_ui_lbl_did">Serval DID: </string>
+    <string name="serval_did_sid_ui_lbl_sid">Serval SID: </string>
+    
+    <string name="serval_did_sid_intent_action">org.servalproject.SET_PRIMARY</string>
+    
+    <string name="serval_did_sid_intent_did">serval-did</string>
+    <string name="serval_did_sid_intent_sid">serval-sid</string>
+    
+    <string name="serval_did_sid_intent_no_data">Expected Value Missing from Intent</string>
+    
     <!-- miscellaneous UI Strings -->
     <string name="misc_ui_btn_back">Back to Main Screen</string>
+    <string name="misc_value_missing">Expected Value Missing</string>
 
     <!-- system strings -->
     <string name="system_app_name">Serval Mesh Sampler</string>
     <string name="system_serval_mesh_package_name">org.servalproject</string>
+    <string name="system_serval_mesh_sid_did_broadcast">org.servalproject.SET_PRIMARY</string>
 
 </resources>

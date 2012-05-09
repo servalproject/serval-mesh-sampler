@@ -49,6 +49,9 @@ public class MainActivity extends Activity implements OnClickListener {
         // setup the components of the view
         Button mButton = (Button) findViewById(R.id.main_ui_btn_mesh_installed);
         mButton.setOnClickListener(this);
+        
+        mButton = (Button) findViewById(R.id.main_ui_btn_sid_did);
+        mButton.setOnClickListener(this);
     }
 
     /*
@@ -65,6 +68,10 @@ public class MainActivity extends Activity implements OnClickListener {
 		switch(v.getId()) {
 		case R.id.main_ui_btn_mesh_installed:
 			mIntent = new Intent(this, org.servalproject.sampler.ServalInstalledActivity.class);
+			startActivity(mIntent);
+			break;
+		case R.id.main_ui_btn_sid_did:
+			mIntent = new Intent(this, org.servalproject.sampler.ServalDidSidActivity.class);
 			startActivity(mIntent);
 			break;
 		default:
