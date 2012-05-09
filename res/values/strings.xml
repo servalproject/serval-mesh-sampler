@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+/*
+ * Copyright (C) 2012 The Serval Project
+ *
+ * This file is part of the Serval Mesh Sampler
+ *
+ * Serval Mesh Sampler is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This source code is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this source code; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+-->
+<resources>
+    
+    <!-- main activity strings -->
+    <string name="main_ui_lbl_title">Serval Mesh Sampler</string>
+    <string name="main_ui_lbl_subtitle">Use the buttons below to explore the functionality of the Serval Mesh APIs</string>
+    
+    <string name="main_ui_lbl_mesh_installed">Serval Mesh Installed?</string>
+    <string name="main_ui_btn_mesh_installed">Check for Serval</string>
+    <string name="main_ui_lbl_sid_did">Serval DID &amp; SID</string>
+    <string name="main_ui_btn_sid_did">Retrieve Values</string>
+    
+    <!-- serval installed activity strings -->
+    <string name="serval_installed_ui_lbl_title">Is Serval Mesh Installed?</string>
+    <string name="serval_installed_ui_lbl_subtitle">Use the code in this activity to check if the Serval Mesh software is installed</string>
+    <string name="serval_installed_ui_img_serval_cat">Serval Project Cat Logo</string>
+    <string name="serval_installed_ui_lbl_status_yes">Serval Mesh Software is Installed</string>
+    <string name="serval_installed_ui_lbl_status_no">Serval Mesh Software is Not Installed</string>
+    
+    <!-- miscellaneous UI Strings -->
+    <string name="misc_ui_btn_back">Back to Main Screen</string>
+
+    <!-- system strings -->
+    <string name="system_app_name">Serval Mesh Sampler</string>
+    <string name="system_serval_mesh_package_name">org.servalproject</string>
+
+</resources>
