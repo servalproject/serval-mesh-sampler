@@ -84,7 +84,7 @@ public class DidSidReceiver extends BroadcastReceiver {
 		if(did != null && sid != null) {
 			
 			// create a new Intent
-			Intent mIntent = new Intent(context, org.servalproject.sampler.ServalDidSidActivity.class);
+			Intent mIntent = new Intent(context, org.servalproject.sampler.DidSidActivity.class);
 			
 			// add the data that we've received
 			mIntent.putExtra(context.getString(R.string.serval_did_sid_intent_did), did);

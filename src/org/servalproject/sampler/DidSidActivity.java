@@ -34,7 +34,7 @@ import android.widget.TextView;
 /**
  * an activity that can be used to retrieve the Serval DID and SID
  */
-public class ServalDidSidActivity extends Activity implements OnClickListener {
+public class DidSidActivity extends Activity implements OnClickListener {
 	
 	/*
 	 * private class level constants

@@ -70,11 +70,11 @@ public class MainActivity extends Activity implements OnClickListener {
 		// determine which button was touched
 		switch(v.getId()) {
 		case R.id.main_ui_btn_mesh_installed:
-			mIntent = new Intent(this, org.servalproject.sampler.ServalInstalledActivity.class);
+			mIntent = new Intent(this, org.servalproject.sampler.InstalledActivity.class);
 			startActivity(mIntent);
 			break;
 		case R.id.main_ui_btn_sid_did:
-			mIntent = new Intent(this, org.servalproject.sampler.ServalDidSidActivity.class);
+			mIntent = new Intent(this, org.servalproject.sampler.DidSidActivity.class);
 			startActivity(mIntent);
 			break;
 		case R.id.main_ui_btn_state_change:

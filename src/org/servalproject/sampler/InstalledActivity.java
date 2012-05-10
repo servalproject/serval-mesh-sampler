@@ -34,7 +34,7 @@ import android.widget.TextView;
  * sample code to show how to check if the Serval Mesh software
  * is installed
  */
-public class ServalInstalledActivity extends Activity implements OnClickListener {
+public class InstalledActivity extends Activity implements OnClickListener {
 	
 	/*
 	 * private class level constants

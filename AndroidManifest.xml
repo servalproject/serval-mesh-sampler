@@ -39,8 +39,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ServalInstalledActivity" android:label="@string/serval_installed_ui_lbl_title"></activity>
-        <activity android:name=".ServalDidSidActivity" android:label="@string/serval_did_sid_ui_lbl_title" android:launchMode="singleTop"></activity>
+        <activity android:name=".InstalledActivity" android:label="@string/serval_installed_ui_lbl_title"></activity>
+        <activity android:name=".DidSidActivity" android:label="@string/serval_did_sid_ui_lbl_title" android:launchMode="singleTop"></activity>
         <activity android:name=".StateChangedActivity" android:label="@string/state_changed_ui_lbl_title" android:launchMode="singleTop"></activity>
     </application>
 
