@@ -27,16 +27,12 @@
     <string name="main_ui_lbl_subtitle">Use the buttons below to explore the functionality of the Serval Mesh APIs</string>
     
     <string name="main_ui_lbl_mesh_installed">Serval Mesh Installed?</string>
-    <string name="main_ui_btn_mesh_installed">Check for Serval</string>
-    
     <string name="main_ui_lbl_sid_did">Get Serval DID &amp; SID</string>
-    <string name="main_ui_btn_sid_did">Retrieve Values</string>
-    
     <string name="main_ui_lbl_state_change">Listen for State Changes</string>
-    <string name="main_ui_btn_state_change">Start Listening</string>
+    <string name="main_ui_lbl_state_check">Check Serval Mesh State</string>
+    <string name="main_ui_lbl_start_stop">Start / Stop Serval Mesh</string>
     
-    <string name="main_ui_lbl_state_check">Check State</string>
-    <string name="main_ui_btn_state_check">Request Update</string>
+    <string name="main_ui_btn_try_it">Try It</string>
     
     <!-- serval installed activity strings -->
     <string name="serval_installed_ui_lbl_title">Is Serval Mesh Installed?</string>
@@ -83,6 +79,17 @@
     
     <string name="state_check_intent_extra">state-value</string>
     
+    <!-- start stop serval activity strings -->
+    
+    <string name="start_stop_ui_lbl_title">Start / Stop Serval Mesh</string>
+    <string name="start_stop_ui_lbl_subtitle">Starting and stopping the Serval Mesh requires that an application uses the "org.servalproject.START_STOP" permission and be compiled with the same key as that used to compile the Serval Mesh application</string>
+    
+    <string name="start_stop_ui_lbl_start">Start Serval</string>
+    <string name="start_stop_ui_btn_start">Start</string>
+    
+    <string name="start_stop_ui_lbl_stop">Stop Serval</string>
+    <string name="start_stop_ui_btn_stop">Strop</string>
+    
     <!-- 
     	start slightly modified list of state strings 
     	as sourced from the Serval Mesh strings file
@@ -111,4 +118,7 @@
     
 	<string name="system_serval_mesh_state_check">org.servalproject.ACTION_STATE_CHECK</string>
 	<string name="system_serval_mesh_state_check_reply">org.servalproject.ACTION_STATE_CHECK_UPDATE</string>
+	
+	<string name="system_serval_mesh_start_action">org.servalproject.ACTION_START_SERVAL</string>
+	<string name="system_serval_mesh_stop_action">org.servalproject.ACTION_STOP_SERVAL</string>
 </resources>
