@@ -26,7 +26,12 @@
     android:versionName="1.0" >
 
     <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="8" />
+    
+    <!-- permission required to start and stop the Serval Mesh software -->
     <uses-permission android:name="org.servalproject.START_STOP"/>
+    
+    <!--  permission required to send a MeshMS message -->
+    <uses-permission android:name="org.servalproject.meshms.SEND_MESHMS"/>
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -45,6 +50,7 @@
         <activity android:name=".StateChangedActivity" android:label="@string/state_changed_ui_lbl_title" android:launchMode="singleTop"></activity>
         <activity android:name=".StateCheckActivity" android:label="@string/state_check_ui_lbl_title" android:launchMode="singleTop"></activity>
         <activity android:name=".StartStopActivity" android:label="@string/start_stop_ui_lbl_title"></activity>
+        <activity android:name=".SendMeshMS" android:label="@string/send_meshms_ui_lbl_title"></activity>
     </application>
 
 </manifest>

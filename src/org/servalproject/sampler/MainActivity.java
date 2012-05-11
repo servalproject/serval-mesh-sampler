@@ -61,6 +61,9 @@ public class MainActivity extends Activity implements OnClickListener {
         
         mButton = (Button) findViewById(R.id.main_ui_btn_start_stop);
         mButton.setOnClickListener(this);
+        
+        mButton = (Button) findViewById(R.id.main_ui_btn_send_meshms);
+        mButton.setOnClickListener(this);
     }
 
     /*
@@ -93,6 +96,10 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.main_ui_btn_start_stop:
 			mIntent = new Intent(this, org.servalproject.sampler.StartStopActivity.class);
+			startActivity(mIntent);
+			break;
+		case R.id.main_ui_btn_send_meshms:
+			mIntent = new Intent(this, org.servalproject.sampler.SendMeshMS.class);
 			startActivity(mIntent);
 			break;
 		default:

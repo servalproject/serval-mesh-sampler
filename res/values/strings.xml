@@ -24,13 +24,14 @@
     
     <!-- main activity strings -->
     <string name="main_ui_lbl_title">Serval Mesh Sampler</string>
-    <string name="main_ui_lbl_subtitle">Use the buttons below to explore the functionality of the Serval Mesh APIs</string>
+    <string name="main_ui_lbl_subtitle">Use the buttons below to explore the functionality of the Serval Mesh APIs.\n\nScroll down to see all of the buttons</string>
     
     <string name="main_ui_lbl_mesh_installed">Serval Mesh Installed?</string>
     <string name="main_ui_lbl_sid_did">Get Serval DID &amp; SID</string>
     <string name="main_ui_lbl_state_change">Listen for State Changes</string>
     <string name="main_ui_lbl_state_check">Check Serval Mesh State</string>
     <string name="main_ui_lbl_start_stop">Start / Stop Serval Mesh</string>
+    <string name="main_ui_lbl_send_meshms">Send a MeshMS</string>
     
     <string name="main_ui_btn_try_it">Try It</string>
     
@@ -90,6 +91,23 @@
     <string name="start_stop_ui_lbl_stop">Stop Serval</string>
     <string name="start_stop_ui_btn_stop">Strop</string>
     
+    <!-- send serval meshms activity strings -->
+    <string name="send_meshms_ui_lbl_title">Send a Serval MeshMS</string>
+    <string name="send_meshms_ui_lbl_subtitle">Sending a Serval MeshMS requires that an application uses the "org.servalproject.meshms.SEND_MESHMS" permission.</string>
+    
+    <string name="send_meshms_ui_lbl_phone_no">Phone Number: </string>
+    <string name="send_meshms_ui_lbl_content">Content: </string>
+    
+    <string name="send_meshms_ui_btn_send">Send Message</string>
+    
+    <string name="send_meshms_toast_no_phone">The phone number is missing</string>
+    <string name="send_meshms_toast_phone_not_digits">The phone number must contain only digits</string>
+    
+    <string name="send_meshms_toast_no_content">The content of the message is missing</string>
+    <string name="send_meshms_toast_content_length">The content of the message must be below %1$s characters</string>
+    
+    <string name="send_meshms_toast_sent">Message has been sent to Serval Mesh for processing</string>
+    
     <!-- 
     	start slightly modified list of state strings 
     	as sourced from the Serval Mesh strings file
@@ -121,4 +139,7 @@
 	
 	<string name="system_serval_mesh_start_action">org.servalproject.ACTION_START_SERVAL</string>
 	<string name="system_serval_mesh_stop_action">org.servalproject.ACTION_STOP_SERVAL</string>
+	
+	<string name="system_serval_meshms_send_action">org.servalproject.meshms.SEND_MESHMS</string>
+	<string name="system_serval_meshms_extra_name">simple</string>
 </resources>
