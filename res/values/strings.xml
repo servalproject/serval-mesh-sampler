@@ -28,11 +28,15 @@
     
     <string name="main_ui_lbl_mesh_installed">Serval Mesh Installed?</string>
     <string name="main_ui_btn_mesh_installed">Check for Serval</string>
+    
     <string name="main_ui_lbl_sid_did">Get Serval DID &amp; SID</string>
     <string name="main_ui_btn_sid_did">Retrieve Values</string>
     
-    <string name="main_ui_lbl_state_change">List for changes in state</string>
+    <string name="main_ui_lbl_state_change">Listen for State Changes</string>
     <string name="main_ui_btn_state_change">Start Listening</string>
+    
+    <string name="main_ui_lbl_state_check">Check State</string>
+    <string name="main_ui_btn_state_check">Request Update</string>
     
     <!-- serval installed activity strings -->
     <string name="serval_installed_ui_lbl_title">Is Serval Mesh Installed?</string>
@@ -67,6 +71,18 @@
     
     <string name="state_changed_intent_extra">state-value</string>
     
+    <!-- serval state checked activity strings -->
+    
+    <string name="state_check_ui_lbl_title">Serval State Check</string>
+    <string name="state_check_ui_lbl_subtitle">Use an intent and broadcast receiver to check on the status of the Serval Mesh software</string>
+    
+    <string name="state_check_ui_lbl_check">Check Status</string>
+    <string name="state_check_ui_btn_check">Fire Intent</string>
+    
+    <string name="state_check_ui_lbl_state">Current State: </string>
+    
+    <string name="state_check_intent_extra">state-value</string>
+    
     <!-- 
     	start slightly modified list of state strings 
     	as sourced from the Serval Mesh strings file
@@ -90,6 +106,9 @@
     <string name="system_serval_mesh_package_name">org.servalproject</string>
     
     <string name="system_serval_mesh_sid_did_broadcast">org.servalproject.SET_PRIMARY</string>
+    
     <string name="system_serval_mesh_state_change">org.servalproject.ACTION_STATE</string>
-
+    
+	<string name="system_serval_mesh_state_check">org.servalproject.ACTION_STATE_CHECK</string>
+	<string name="system_serval_mesh_state_check_reply">org.servalproject.ACTION_STATE_CHECK_UPDATE</string>
 </resources>

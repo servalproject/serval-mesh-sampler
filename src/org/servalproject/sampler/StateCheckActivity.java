@@ -19,7 +19,7 @@
  */
 package org.servalproject.sampler;
 
-import org.servalproject.sampler.receivers.StateChangeReceiver;
+import org.servalproject.sampler.receivers.StateCheckReceiver;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -32,24 +32,18 @@ import android.widget.Button;
 import android.widget.TextView;
 
 /**
- * an activity that demonstrates how to listen for state
- * changes in the Serval Mesh software
+ * an activity that demonstrates how to request for a state
+ * update from the Serval Mesh software
  */
-public class StateChangedActivity extends Activity implements OnClickListener {
+public class StateCheckActivity extends Activity implements OnClickListener {
 	
 	/*
 	 * private class level constants
 	 */
-	private String sTag = "StateChangedActivity";
+	private String sTag = "StateCheckActivity";
 	
-	/*
-	 * private class level variables
-	 */
-	private StateChangeReceiver receiver = null;
+	private StateCheckReceiver receiver;
 	
-	Button startButton = null;
-	Button stopButton  = null;
-    
 	/*
 	 * (non-Javadoc)
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -57,46 +51,35 @@ public class StateChangedActivity extends Activity implements OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.state_changed);
+        setContentView(R.layout.state_check);
         
-        // setup the components of the view
-        startButton = (Button) findViewById(R.id.state_changed_ui_btn_start);
-        startButton.setOnClickListener(this);
-        
-        stopButton = (Button) findViewById(R.id.state_changed_ui_btn_stop);
-        stopButton.setOnClickListener(this);
-        stopButton.setEnabled(false);
-        
-        Button mButton = (Button) findViewById(R.id.state_changed_ui_btn_back);
+        Button mButton = (Button) findViewById(R.id.state_check_ui_btn_back);
         mButton.setOnClickListener(this);
         
+        mButton = (Button) findViewById(R.id.state_check_ui_btn_check);
+        mButton.setOnClickListener(this);
         
-        // register the broadcast receiver
-        registerReceiver();
     }
-    
-    /*
-     * (non-Javadoc)
-     * @see android.view.View.OnClickListener#onClick(android.view.View)
-     */
+
+	/*
+	 * (non-Javadoc)
+	 * @see android.view.View.OnClickListener#onClick(android.view.View)
+	 */
 	@Override
 	public void onClick(View v) {
 		
-		// determine which button was touched and take the appropriate action
+		// work out which button is touched
 		switch(v.getId()) {
-		case R.id.state_changed_ui_btn_start:
-			// start listening for state changes
-			startButton.setEnabled(false); // stop the user from using buttons when they shouldn't
-			stopButton.setEnabled(true);
-			registerReceiver(); // start listening for state changes
+		case R.id.state_check_ui_btn_check:
+			// check the state of the serval mesh software
+			registerReceiver();
+			Intent mIntent = new Intent(getString(R.string.system_serval_mesh_state_check));
+			startService(mIntent);
+			
+			//debug 
+			Log.d(sTag, "state check button touched");
 			break;
-		case R.id.state_changed_ui_btn_stop:
-			// stop listening for state changes
-			startButton.setEnabled(true); // stop the user from using buttons when they shouldn't
-			stopButton.setEnabled(false);
-			unRegisterReceiver(); // start listening for state changes
-			break;
-		case R.id.state_changed_ui_btn_back:
+		case R.id.state_check_ui_btn_back:
 			// the back button was pressed
 			finish();
 			break;
@@ -117,16 +100,19 @@ public class StateChangedActivity extends Activity implements OnClickListener {
 		 * onNewIntent is called when the broadcast receiver sends its intent
 		 */
 		
-		// show the did
-		TextView mTextView = (TextView) findViewById(R.id.state_changed_ui_lbl_state_value);
+		// show the value
+		TextView mTextView = (TextView) findViewById(R.id.state_check_ui_lbl_state_value);
 		
-		if(intent.getStringExtra(getString(R.string.state_changed_intent_extra)) != null) {
-			mTextView.setText(intent.getStringExtra(getString(R.string.state_changed_intent_extra)));
+		if(intent.getStringExtra(getString(R.string.state_check_intent_extra)) != null) {
+			mTextView.setText(intent.getStringExtra(getString(R.string.state_check_intent_extra)));
 		} else {
-			// an error has occured has the required information isn't in the intent
+			// an error has occurred has the required information isn't in the intent
 			Log.d(sTag, "missing value in intent from broadcast receiver");
 			mTextView.setText(R.string.misc_intent_no_data);
 		}
+		
+		// stop listening for replies
+		unRegisterReceiver();
 	}
 
     /*
@@ -139,11 +125,14 @@ public class StateChangedActivity extends Activity implements OnClickListener {
 			unRegisterReceiver();
 		}
 		
+		//debug 
+		Log.d(sTag, "receiver registered");
+		
         // register the receiver for updates
         IntentFilter mBroadcastFilter = new IntentFilter();
-        mBroadcastFilter.addAction(getString(R.string.system_serval_mesh_state_change));
+        mBroadcastFilter.addAction(getString(R.string.system_serval_mesh_state_check_reply));
         
-        receiver = new StateChangeReceiver();
+        receiver = new StateCheckReceiver();
         registerReceiver(receiver, mBroadcastFilter); 
 	}
 	
@@ -152,6 +141,10 @@ public class StateChangedActivity extends Activity implements OnClickListener {
 	 */
 	private void unRegisterReceiver() {
 		if(receiver != null) {
+			
+			//debug 
+			Log.d(sTag, "receiver unRegistered");
+			
 			unregisterReceiver(receiver);
 			receiver = null;
 		}
@@ -167,6 +160,5 @@ public class StateChangedActivity extends Activity implements OnClickListener {
 		unRegisterReceiver();
 		super.onDestroy();
 	}
-
 
 }
