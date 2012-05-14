@@ -41,7 +41,7 @@ public class SendMeshMsActivity extends Activity implements OnClickListener {
 	/*
 	 * private class level constants
 	 */
-	private String sTag = "SendMeshMS";
+	private String sTag = "SendMeshMsActivity";
     
 	/*
 	 * (non-Javadoc)
