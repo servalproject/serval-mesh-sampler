@@ -36,7 +36,7 @@ import android.widget.Toast;
  * an activity that includes sample code on how to 
  * send a MeshMS message
  */
-public class SendMeshMS extends Activity implements OnClickListener {
+public class SendMeshMsActivity extends Activity implements OnClickListener {
 	
 	/*
 	 * private class level constants

@@ -99,7 +99,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			startActivity(mIntent);
 			break;
 		case R.id.main_ui_btn_send_meshms:
-			mIntent = new Intent(this, org.servalproject.sampler.SendMeshMS.class);
+			mIntent = new Intent(this, org.servalproject.sampler.SendMeshMsActivity.class);
 			startActivity(mIntent);
 			break;
 		default:
