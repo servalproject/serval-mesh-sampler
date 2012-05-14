@@ -31,6 +31,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * an activity the provides sample code on how to receives a new MeshMS from the 
+ * Serval Mesh software
+ */
 public class ReceiveMeshMsActivity extends Activity implements OnClickListener {
 	
 	/*
@@ -64,6 +68,10 @@ public class ReceiveMeshMsActivity extends Activity implements OnClickListener {
         stopButton.setEnabled(false);
     }
 
+    /*
+     * (non-Javadoc)
+     * @see android.view.View.OnClickListener#onClick(android.view.View)
+     */
 	@Override
 	public void onClick(View v) {
 		
