@@ -32,6 +32,7 @@
     <string name="main_ui_lbl_state_check">Check Serval Mesh State</string>
     <string name="main_ui_lbl_start_stop">Start / Stop Serval Mesh</string>
     <string name="main_ui_lbl_send_meshms">Send a MeshMS</string>
+    <string name="main_ui_lbl_receive_meshms">Receive a MeshMS</string>
     
     <string name="main_ui_btn_try_it">Try It</string>
     
@@ -61,9 +62,6 @@
     <string name="state_changed_ui_lbl_start">Start Receiving</string>
     <string name="state_changed_ui_lbl_stop">Stop Receiving</string>
     
-    <string name="state_changed_ui_btn_start">Start</string>
-    <string name="state_changed_ui_btn_stop">Stop</string>
-    
     <string name="state_changed_ui_lbl_state">Current State: </string>
     
     <string name="state_changed_intent_extra">state-value</string>
@@ -86,10 +84,8 @@
     <string name="start_stop_ui_lbl_subtitle">Starting and stopping the Serval Mesh requires that an application uses the "org.servalproject.START_STOP" permission and be compiled with the same key as that used to compile the Serval Mesh application</string>
     
     <string name="start_stop_ui_lbl_start">Start Serval</string>
-    <string name="start_stop_ui_btn_start">Start</string>
     
     <string name="start_stop_ui_lbl_stop">Stop Serval</string>
-    <string name="start_stop_ui_btn_stop">Strop</string>
     
     <!-- send serval meshms activity strings -->
     <string name="send_meshms_ui_lbl_title">Send a Serval MeshMS</string>
@@ -107,6 +103,27 @@
     <string name="send_meshms_toast_content_length">The content of the message must be below %1$s characters</string>
     
     <string name="send_meshms_toast_sent">Message has been sent to Serval Mesh for processing</string>
+    
+    <!-- recevieve serval meshms activitiy strings -->
+    <string name="receive_meshms_ui_lbl_title">Receive a Serval MeshMS</string>
+    <string name="receive_meshms_ui_lbl_subtitle">Listening for and receiving new Serval MeshMS messages requires that an application uses the "org.servalproject.meshms.RECEIVE_MESHMS" permission.</string>
+    
+    <string name="receive_meshms_ui_lbl_start">Start listening: </string>
+    <string name="receive_meshms_ui_lbl_stop">Stop listening: </string>
+    <string name="receive_meshms_ui_lbl_msg_details">New Message Details</string>
+    
+    <string name="receive_meshms_ui_lbl_time">Received: </string>
+    <string name="receive_meshms_ui_lbl_from">From: </string>
+    <string name="receive_meshms_ui_lbl_content">Content: </string>
+    
+    <string name="receive_meshms_intent_time">time</string>
+    <string name="receive_meshms_intent_from">from</string>
+    <string name="receive_meshms_intent_content">content</string>
+    
+    <!-- misc common strings -->
+    <string name="misc_ui_btn_start">Start</string>
+    <string name="misc_ui_btn_stop">Stop</string>
+    
     
     <!-- 
     	start slightly modified list of state strings 
@@ -141,5 +158,6 @@
 	<string name="system_serval_mesh_stop_action">org.servalproject.ACTION_STOP_SERVAL</string>
 	
 	<string name="system_serval_meshms_send_action">org.servalproject.meshms.SEND_MESHMS</string>
+	<string name="system_serval_mesh_receive_action">org.servalproject.meshms.RECEIVE_MESHMS</string>
 	<string name="system_serval_meshms_extra_name">simple</string>
 </resources>

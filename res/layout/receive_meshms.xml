@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#000000">
+
+	<TextView android:id="@+id/receive_meshms_ui_lbl_title"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:text="@string/receive_meshms_ui_lbl_title"
+		android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+		android:layout_marginLeft="@dimen/ui_elem_margin_left"
+		android:layout_marginRight="@dimen/ui_elem_margin_right"
+		android:gravity="center_vertical|center_horizontal"
+		android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	<TextView android:id="@+id/receive_meshms_ui_lbl_subtitle"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:text="@string/receive_meshms_ui_lbl_subtitle"
+		android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+		android:layout_marginLeft="@dimen/ui_elem_margin_left"
+		android:layout_marginRight="@dimen/ui_elem_margin_right"
+		android:gravity="center_vertical|center_horizontal" />
+	
+	<TableLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+
+		<TableRow android:id="@+id/receive_meshms_ui_tbl_row_1"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content">
+
+			<TextView android:id="@+id/receive_meshms_ui_lbl_start"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content"
+				android:text="@string/receive_meshms_ui_lbl_start"
+				android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+				android:layout_marginLeft="@dimen/ui_elem_margin_left"
+				android:layout_marginRight="@dimen/ui_elem_margin_right" />
+
+			<Button android:id="@+id/receive_meshms_ui_btn_start"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+				android:layout_marginLeft="@dimen/ui_elem_margin_left"
+				android:layout_marginRight="@dimen/ui_elem_margin_right" 
+				android:text="@string/misc_ui_btn_start" />
+
+		</TableRow>
+		
+		<TableRow android:id="@+id/receive_meshms_ui_tbl_row_2"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content">
+
+			<TextView android:id="@+id/receive_meshms_ui_lbl_stop"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content"
+				android:text="@string/receive_meshms_ui_lbl_stop"
+				android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+				android:layout_marginLeft="@dimen/ui_elem_margin_left"
+				android:layout_marginRight="@dimen/ui_elem_margin_right" />
+
+			<Button android:id="@+id/receive_meshms_ui_btn_stop"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+				android:layout_marginLeft="@dimen/ui_elem_margin_left"
+				android:layout_marginRight="@dimen/ui_elem_margin_right" 
+				android:text="@string/misc_ui_btn_stop" />
+
+		</TableRow>
+		
+	</TableLayout>
+	
+    <TextView android:id="@+id/receive_meshms_ui_lbl_msg_details"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"
+			android:text="@string/receive_meshms_ui_lbl_msg_details"
+			android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+			android:layout_marginLeft="@dimen/ui_elem_margin_left"
+			android:layout_marginRight="@dimen/ui_elem_margin_right"
+			android:gravity="center_horizontal" />
+    
+    <ScrollView
+        android:id="@+id/receive_meshms_ui_scroll_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    
+	    <TableLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+	
+			<TableRow android:id="@+id/receive_meshms_ui_tbl_row_3"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content">
+	
+				<TextView android:id="@+id/receive_meshms_ui_lbl_time"
+					android:layout_width="fill_parent" 
+					android:layout_height="wrap_content"
+					android:text="@string/receive_meshms_ui_lbl_time"
+					android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+					android:layout_marginLeft="@dimen/ui_elem_margin_left"
+					android:layout_marginRight="@dimen/ui_elem_margin_right" />
+				
+				<TextView
+	                android:id="@+id/receive_meshms_ui_txt_time"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+	       			android:layout_marginLeft="@dimen/ui_elem_margin_left"
+	        		android:layout_marginRight="@dimen/ui_elem_margin_right"/>
+	
+			</TableRow>
+			
+			<TableRow android:id="@+id/receive_meshms_ui_tbl_row_5"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content">
+	
+				<TextView android:id="@+id/receive_meshms_ui_lbl_from"
+					android:layout_width="fill_parent" 
+					android:layout_height="wrap_content"
+					android:text="@string/receive_meshms_ui_lbl_from"
+					android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+					android:layout_marginLeft="@dimen/ui_elem_margin_left"
+					android:layout_marginRight="@dimen/ui_elem_margin_right" />
+				
+				<TextView
+	                android:id="@+id/receive_meshms_ui_txt_from"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+	       			android:layout_marginLeft="@dimen/ui_elem_margin_left"
+	        		android:layout_marginRight="@dimen/ui_elem_margin_right"/>
+	
+			</TableRow>
+			
+			<TableRow android:id="@+id/receive_meshms_ui_tbl_row_6"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content">
+	
+				<TextView android:id="@+id/receive_meshms_ui_lbl_content"
+					android:layout_width="fill_parent" 
+					android:layout_height="wrap_content"
+					android:text="@string/receive_meshms_ui_lbl_content"
+					android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+					android:layout_marginLeft="@dimen/ui_elem_margin_left"
+					android:layout_marginRight="@dimen/ui_elem_margin_right" />
+				
+				<TextView
+	                android:id="@+id/receive_meshms_ui_txt_content"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+	       			android:layout_marginLeft="@dimen/ui_elem_margin_left"
+	        		android:layout_marginRight="@dimen/ui_elem_margin_right"/>
+	
+			</TableRow>
+			
+		</TableLayout>
+	</ScrollView>
+    
+
+</LinearLayout>

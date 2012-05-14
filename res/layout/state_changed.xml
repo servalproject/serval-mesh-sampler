@@ -72,7 +72,7 @@
 		        android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
 		        android:layout_marginLeft="@dimen/ui_elem_margin_left"
 		        android:layout_marginRight="@dimen/ui_elem_margin_right"
-		        android:text="@string/state_changed_ui_btn_start" />
+		        android:text="@string/misc_ui_btn_start" />
             
         </TableRow>
 
@@ -97,7 +97,7 @@
 		        android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
 		        android:layout_marginLeft="@dimen/ui_elem_margin_left"
 		        android:layout_marginRight="@dimen/ui_elem_margin_right"
-		        android:text="@string/state_changed_ui_btn_stop" />
+		        android:text="@string/misc_ui_btn_stop" />
         </TableRow>
         
         <TableRow
