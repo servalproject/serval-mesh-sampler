@@ -67,6 +67,9 @@ public class MainActivity extends Activity implements OnClickListener {
         
         mButton = (Button) findViewById(R.id.main_ui_btn_receive_meshms);
         mButton.setOnClickListener(this);
+        
+        mButton = (Button) findViewById(R.id.main_ui_btn_rhizome_add_file);
+        mButton.setOnClickListener(this);
     }
 
     /*
@@ -107,6 +110,10 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.main_ui_btn_receive_meshms:
 			mIntent = new Intent(this, org.servalproject.sampler.ReceiveMeshMsActivity.class);
+			startActivity(mIntent);
+			break;
+		case R.id.main_ui_btn_rhizome_add_file:
+			mIntent = new Intent(this, org.servalproject.sampler.RhizomeAddFileActivity.class);
 			startActivity(mIntent);
 			break;
 		default:

@@ -69,7 +69,8 @@
 				android:lines="5"
 				android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
 				android:layout_marginLeft="@dimen/ui_elem_margin_left"
-				android:layout_marginRight="@dimen/ui_elem_margin_right" />
+				android:layout_marginRight="@dimen/ui_elem_margin_right"
+				android:gravity="top" />
 		</TableRow>
 	</TableLayout>
 	

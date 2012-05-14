@@ -35,6 +35,11 @@
     
     <!-- permission required to receive a MeshMS message -->
     <uses-permission android:name="org.servalproject.meshms.RECEIVE_MESHMS"/>
+    
+    <!-- permissions required to share a file via Rhizome -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> <!-- only files on the SD card can be shared -->
+    <uses-permission android:name="org.servalproject.rhizome.ADD_FILE"/>
+    
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -55,6 +60,7 @@
         <activity android:name=".StartStopActivity" android:label="@string/start_stop_ui_lbl_title"></activity>
         <activity android:name=".SendMeshMsActivity" android:label="@string/send_meshms_ui_lbl_title"></activity>
         <activity android:name=".ReceiveMeshMsActivity" android:label="@string/receive_meshms_ui_lbl_title" android:launchMode="singleTop"></activity>
+        <activity android:name=".RhizomeAddFileActivity"  android:label="@string/rhizome_add_file_ui_lbl_title" ></activity>
     </application>
 
 </manifest>

@@ -33,6 +33,7 @@
     <string name="main_ui_lbl_start_stop">Start / Stop Serval Mesh</string>
     <string name="main_ui_lbl_send_meshms">Send a MeshMS</string>
     <string name="main_ui_lbl_receive_meshms">Receive a MeshMS</string>
+    <string name="main_ui_lbl_rhizome_add_file">Add File to Rhizome</string>
     
     <string name="main_ui_btn_try_it">Try It</string>
     
@@ -120,6 +121,24 @@
     <string name="receive_meshms_intent_from">from</string>
     <string name="receive_meshms_intent_content">content</string>
     
+    <!-- rhizome add file activity strings -->
+    <string name="rhizome_add_file_ui_lbl_title">Share File via Rhizome</string>
+    <string name="rhizome_add_file_ui_lbl_subtitle">An application that wishes to share a file via Rhizome on a Serval Mesh is required to use the "org.servalproject.rhizome.ADD_FILE" permission.\n\nYou need to manually delete the test files that this activity creates</string>
+    
+    <string name="rhizome_add_file_ui_lbl_share">Shared File: </string>
+    <string name="rhizome_add_file_ui_btn_share">Share</string>
+    
+    <string name="rhizome_add_file_ui_lbl_path">File Path: </string>
+    
+    <string name="rhizome_add_file_asset">serval-cats.png</string>
+    
+    <string name="rhizome_add_file_name">serval-mesh-sampler-%1$d.png</string>
+    
+    <string name="rhizome_add_file_toast_copy_fail">Unable to copy the test file to the SD Card, check logcat for details.</string>
+    
+    <string name="rhizome_add_file_toast_copy_success">The \'%1$s\' file has been added to Rhizome</string>
+    
+    
     <!-- misc common strings -->
     <string name="misc_ui_btn_start">Start</string>
     <string name="misc_ui_btn_stop">Stop</string>
@@ -160,4 +179,10 @@
 	<string name="system_serval_meshms_send_action">org.servalproject.meshms.SEND_MESHMS</string>
 	<string name="system_serval_mesh_receive_action">org.servalproject.meshms.RECEIVE_MESHMS</string>
 	<string name="system_serval_meshms_extra_name">simple</string>
+	
+	<string name="system_serval_rhizome_add_file_action">org.servalproject.rhizome.ADD_FILE</string>
+	<string name="system_serval_rhizome_intent_path_extra">path</string>
+	<string name="system_serval_rhizome_intent_version_extra">version</string>
+	<string name="system_serval_rhizome_intent_author_extra">author</string>
+	
 </resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#000000">
+
+	<TextView android:id="@+id/rhizome_add_file_ui_lbl_title"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:text="@string/rhizome_add_file_ui_lbl_title"
+		android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+		android:layout_marginLeft="@dimen/ui_elem_margin_left"
+		android:layout_marginRight="@dimen/ui_elem_margin_right"
+		android:gravity="center_vertical|center_horizontal"
+		android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	<TextView android:id="@+id/rhizome_add_file_ui_lbl_subtitle"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:text="@string/rhizome_add_file_ui_lbl_subtitle"
+		android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+		android:layout_marginLeft="@dimen/ui_elem_margin_left"
+		android:layout_marginRight="@dimen/ui_elem_margin_right"
+		android:gravity="center_vertical|center_horizontal" />
+	
+	<TableLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+
+		<TableRow android:id="@+id/rhizome_add_file_ui_tbl_row_1"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content">
+
+			<TextView android:id="@+id/rhizome_add_file_ui_lbl_share"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content"
+				android:text="@string/rhizome_add_file_ui_lbl_share"
+				android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+				android:layout_marginLeft="@dimen/ui_elem_margin_left"
+				android:layout_marginRight="@dimen/ui_elem_margin_right" />
+
+			<Button android:id="@+id/rhizome_add_file_ui_btn_share"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+				android:layout_marginLeft="@dimen/ui_elem_margin_left"
+				android:layout_marginRight="@dimen/ui_elem_margin_right" 
+				android:text="@string/rhizome_add_file_ui_btn_share" />
+
+		</TableRow>
+		
+		<TableRow android:id="@+id/rhizome_add_file_ui_tbl_row_2"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content">
+	
+				<TextView android:id="@+id/rhizome_add_file_ui_lbl_path"
+					android:layout_width="fill_parent" 
+					android:layout_height="wrap_content"
+					android:text="@string/rhizome_add_file_ui_lbl_path"
+					android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+					android:layout_marginLeft="@dimen/ui_elem_margin_left"
+					android:layout_marginRight="@dimen/ui_elem_margin_right" />
+	
+			</TableRow>
+	</TableLayout>
+	
+					
+	<TextView
+        android:id="@+id/rhizome_add_file_ui_lbl_file_path"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+		android:layout_marginLeft="@dimen/ui_elem_margin_left"
+		android:layout_marginRight="@dimen/ui_elem_margin_right"/>
+</LinearLayout>
