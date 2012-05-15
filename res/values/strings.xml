@@ -34,6 +34,7 @@
     <string name="main_ui_lbl_send_meshms">Send a MeshMS</string>
     <string name="main_ui_lbl_receive_meshms">Receive a MeshMS</string>
     <string name="main_ui_lbl_rhizome_add_file">Add File to Rhizome</string>
+    <string name="main_ui_lbl_rhizome_receive_file">Receive File from Rhizome</string>
     
     <string name="main_ui_btn_try_it">Try It</string>
     
@@ -138,6 +139,19 @@
     
     <string name="rhizome_add_file_toast_copy_success">The \'%1$s\' file has been added to Rhizome</string>
     
+    <!-- rhizome receive file activity strings -->
+    <string name="rhizome_receive_file_ui_lbl_title">Recieve a File from Rhizome</string>
+    <string name="rhizome_receive_file_ui_lbl_subtitle">An application that wishes to receive notification of a new file from Rhizome on a Serval Mesh is reqiured to use the "org.servalproject.rhizome.RECEIVE_FILE" permission.</string>
+    
+    <string name="rhizome_receive_file_ui_lbl_start">Start listening: </string>
+    <string name="rhizome_receive_file_ui_lbl_stop">Stop listening: </string>
+    
+    <string name="rhizome_receive_ui_lbl_file_details">File Details</string>
+    
+    <string name="rhizome_receive_file_ui_lbl_path">Path to File: </string>
+    <string name="rhizome_receive_file_ui_lbl_version">File Version: </string>
+    <string name="rhizome_receive_file_ui_lbl_author">Author: </string>
+    
     
     <!-- misc common strings -->
     <string name="misc_ui_btn_start">Start</string>
@@ -181,6 +195,7 @@
 	<string name="system_serval_meshms_extra_name">simple</string>
 	
 	<string name="system_serval_rhizome_add_file_action">org.servalproject.rhizome.ADD_FILE</string>
+	<string name="system_serval_rhizome_receive_file_action">org.servalproject.rhizome.RECIEVE_FILE</string>
 	<string name="system_serval_rhizome_intent_path_extra">path</string>
 	<string name="system_serval_rhizome_intent_version_extra">version</string>
 	<string name="system_serval_rhizome_intent_author_extra">author</string>
