@@ -131,11 +131,13 @@
     
     <string name="rhizome_add_file_ui_lbl_path">File Path: </string>
     
-    <string name="rhizome_add_file_asset">serval-cats.png</string>
+    <string name="rhizome_add_file_name">serval-mesh-sampler-%1$d.txt</string>
     
-    <string name="rhizome_add_file_name">serval-mesh-sampler-%1$d.png</string>
+    <string name="rhizome_add_file_toast_copy_fail">Unable to create the sample file on the external storage, check logcat for details.</string>
     
-    <string name="rhizome_add_file_toast_copy_fail">Unable to copy the test file to the SD Card, check logcat for details.</string>
+    <string name="rhizome_add_file_content_header"># Sample file created by the Serval Mesh Sampler application for testing the Rhizome functionality of the Serval Mesh software.</string>
+    <string name="rhizome_add_file_content_subheader"># File Created: %1$d</string>
+    <string name="rhizome_add_file_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at consequat turpis. Integer consectetur est nec sapien egestas vel egestas velit dictum. Sed a justo mi, vitae mattis leo. In at felis quis arcu viverra tincidunt. Duis accumsan, neque non vulputate pellentesque, metus magna ornare lectus, eget hendrerit leo nulla non augue. Integer dapibus faucibus orci sit amet tempor. Donec nisi diam, faucibus vehicula suscipit nec, bibendum non risus. Etiam pellentesque, lacus eget porta adipiscing, risus ligula sollicitudin leo, et suscipit velit sem nec erat. Morbi interdum aliquam purus eu tincidunt. Nulla dapibus facilisis nulla. Aenean tristique porttitor mauris ac feugiat. Sed velit diam, ullamcorper posuere feugiat sed, commodo sit amet tortor. Donec tristique libero nec diam porta sodales.</string>
     
     <string name="rhizome_add_file_toast_copy_success">The \'%1$s\' file has been added to Rhizome</string>
     

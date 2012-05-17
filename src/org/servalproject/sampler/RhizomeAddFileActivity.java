@@ -19,14 +19,13 @@
  */
 package org.servalproject.sampler;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-
-import org.servalproject.sampler.utils.FileUtils;
+import java.io.PrintWriter;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -83,36 +82,40 @@ public class RhizomeAddFileActivity extends Activity implements OnClickListener 
 		 *  copy the included file from assets to the SD Card
 		 */
 		try {
-			// get an input stream to the file in the assets directory
-			AssetManager mAssetManager = getAssets();
-			InputStream mInputStream = mAssetManager.open(getString(R.string.rhizome_add_file_asset));
 			
 			// get the path to the external storage
 			String mOutputPath = Environment.getExternalStorageDirectory().getCanonicalPath();
 			
 			// build a unique file name
-			String mOutputFile = String.format(getString(R.string.rhizome_add_file_name), System.currentTimeMillis()); 
+			String mOutputFile = String.format(getString(R.string.rhizome_add_file_name), System.currentTimeMillis());
+			mOutputFile = mOutputPath + File.separator + mOutputFile;
 			
-			// copy the file
-			String mFileForRhizome = FileUtils.copyFileToDir(mInputStream, mOutputPath, mOutputFile);
+			// open the file
+			PrintWriter mWriter = new PrintWriter(new FileWriter(mOutputFile));
 			
-			// default version (increase by 1 for each new version of the same file)
+			// write some content to the file
+			mWriter.println(getString(R.string.rhizome_add_file_content_header));
+			mWriter.println(String.format(getString(R.string.rhizome_add_file_content_subheader), System.currentTimeMillis())); // ensures that content is always unique
+			mWriter.println(getString(R.string.rhizome_add_file_content));
+			mWriter.close();
+			
+			// first version of the file (increase by 1 for each new version of the same file)
 			String mVersion = "0";
 			
 			// request that the file be added to rhizome
 			Intent mIntent = new Intent(getString(R.string.system_serval_rhizome_add_file_action));
-			mIntent.putExtra(getString(R.string.system_serval_rhizome_intent_path_extra), mFileForRhizome);
+			mIntent.putExtra(getString(R.string.system_serval_rhizome_intent_path_extra), mOutputFile);
 			mIntent.putExtra(getString(R.string.system_serval_rhizome_intent_version_extra), mVersion);
 			mIntent.putExtra(getString(R.string.system_serval_rhizome_intent_author_extra), getString(R.string.main_ui_lbl_title));
 			startService(mIntent);
 			
-			Toast.makeText(this, String.format(getString(R.string.rhizome_add_file_toast_copy_success), mFileForRhizome), Toast.LENGTH_LONG).show();
+			Toast.makeText(this, String.format(getString(R.string.rhizome_add_file_toast_copy_success), mOutputFile), Toast.LENGTH_LONG).show();
 			
 			TextView mTextView = (TextView) findViewById(R.id.rhizome_add_file_ui_lbl_file_path);
-			mTextView.setText(mFileForRhizome);
+			mTextView.setText(mOutputFile);
 			
 		} catch (IOException e) {
-			Log.e(sTag, "unable to copy the file to the SD Card", e);
+			Log.e(sTag, "unable to cret the file on the external storage", e);
 			Toast.makeText(this, getString(R.string.rhizome_add_file_toast_copy_fail), Toast.LENGTH_LONG).show();
 			return;
 		}	
