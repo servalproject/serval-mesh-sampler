@@ -23,6 +23,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Random;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -44,6 +45,8 @@ public class RhizomeAddFileActivity extends Activity implements OnClickListener 
 	 * private class level constants
 	 */
 	private String sTag = "RhizomeAddFileActivity";
+	
+	private int sRandomBounds = 1000;
 	
 	/*
 	 * (non-Javadoc)
@@ -96,7 +99,15 @@ public class RhizomeAddFileActivity extends Activity implements OnClickListener 
 			// write some content to the file
 			mWriter.println(getString(R.string.rhizome_add_file_content_header));
 			mWriter.println(String.format(getString(R.string.rhizome_add_file_content_subheader), System.currentTimeMillis())); // ensures that content is always unique
-			mWriter.println(getString(R.string.rhizome_add_file_content));
+			
+			// randomise the size of the file for added testing
+			Random mRandomGenerator = new Random(System.currentTimeMillis());
+			int mRandom = mRandomGenerator.nextInt(sRandomBounds) + 1;
+			
+			for(int i = 0; i < mRandom; i++) {
+				mWriter.println(getString(R.string.rhizome_add_file_content));
+			}
+			
 			mWriter.close();
 			
 			// first version of the file (increase by 1 for each new version of the same file)
