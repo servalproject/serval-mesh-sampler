@@ -57,24 +57,10 @@ public class NewFileFromRhizomeReceiver extends BroadcastReceiver {
 		}
 		
 		// process the new information
-		Intent mIntent = new Intent(context, org.servalproject.sampler.RhizomeReceiveFileActivity.class);
-		
-		// add the values from the intent from rhizome to the new intent
-		mIntent.putExtra(
-				context.getString(R.string.system_serval_rhizome_intent_path_extra), 
-				intent.getStringExtra(context.getString(R.string.system_serval_rhizome_intent_path_extra))
-			);
-		
-		mIntent.putExtra(
-				context.getString(R.string.system_serval_rhizome_intent_version_extra), 
-				intent.getStringExtra(context.getString(R.string.system_serval_rhizome_intent_version_extra))
-			);
-		
-		mIntent.putExtra(
-				context.getString(R.string.system_serval_rhizome_intent_author_extra), 
-				intent.getStringExtra(context.getString(R.string.system_serval_rhizome_intent_author_extra))
-			);
-
+		Intent mIntent = new Intent(intent);
+		mIntent.setClass(context, org.servalproject.sampler.RhizomeReceiveFileActivity.class);
+		mIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+		context.startActivity(mIntent);
 	}
 
 }

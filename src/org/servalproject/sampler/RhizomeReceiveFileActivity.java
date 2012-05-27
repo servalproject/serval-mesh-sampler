@@ -19,11 +19,17 @@
  */
 package org.servalproject.sampler;
 
+import java.io.EOFException;
+import java.io.IOException;
+import java.io.InputStream;
+
 import org.servalproject.sampler.receivers.NewFileFromRhizomeReceiver;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -102,14 +108,38 @@ public class RhizomeReceiveFileActivity extends Activity implements OnClickListe
 		 */
 		
 		// populate the text views with the required values
-		TextView mTextView = (TextView) findViewById(R.id.rhizome_receive_file_ui_lbl_path_value);
-		mTextView.setText(intent.getStringExtra(getString(R.string.system_serval_rhizome_intent_path_extra)));
+		TextView mTextView = (TextView) findViewById(R.id.rhizome_receive_file_ui_lbl_name_value);
+		mTextView.setText(intent.getStringExtra("name"));
 		
 		mTextView = (TextView) findViewById(R.id.rhizome_receive_file_ui_lbl_version_value);
-		mTextView.setText(intent.getStringExtra(getString(R.string.system_serval_rhizome_intent_version_extra)));
+		mTextView.setText(intent.getStringExtra("version"));
 		
-		mTextView = (TextView) findViewById(R.id.rhizome_receive_file_ui_lbl_author_value);
-		mTextView.setText(intent.getStringExtra(getString(R.string.system_serval_rhizome_intent_author_extra)));
+		mTextView = (TextView) findViewById(R.id.rhizome_receive_file_ui_lbl_date_value);
+		mTextView.setText(intent.getStringExtra("date"));
+
+		StringBuilder sb=new StringBuilder();
+		try{
+			Uri uri = intent.getData();
+			ContentResolver resolver = this.getContentResolver();
+			InputStream in = resolver.openInputStream(uri);
+			try{
+				byte data[]=new byte[64];
+				int len = in.read(data);
+				if (len <0)
+					throw new EOFException();
+				
+				for (int i=0;i<len;i++){
+					sb.append(Integer.toHexString(data[i]));
+				}
+			}finally{
+				in.close();
+			}
+		}catch(IOException e){
+			sb.append(e.getMessage());
+		}
+		
+		mTextView = (TextView) findViewById(R.id.rhizome_receive_file_ui_lbl_content_value);
+		mTextView.setText(sb.toString());
 	}
 
     /*
@@ -125,7 +155,7 @@ public class RhizomeReceiveFileActivity extends Activity implements OnClickListe
         // register the receiver for updates
         IntentFilter mBroadcastFilter = new IntentFilter();
         mBroadcastFilter.addAction(getString(R.string.system_serval_rhizome_receive_file_action));
-        
+        mBroadcastFilter.addDataScheme("content");
         receiver = new NewFileFromRhizomeReceiver();
         registerReceiver(receiver, mBroadcastFilter); 
 	}

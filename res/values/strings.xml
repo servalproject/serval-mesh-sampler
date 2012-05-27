@@ -150,9 +150,10 @@
     
     <string name="rhizome_receive_ui_lbl_file_details">File Details</string>
     
-    <string name="rhizome_receive_file_ui_lbl_path">Path to File: </string>
+    <string name="rhizome_receive_file_ui_lbl_name">Name: </string>
     <string name="rhizome_receive_file_ui_lbl_version">File Version: </string>
-    <string name="rhizome_receive_file_ui_lbl_author">Author: </string>
+    <string name="rhizome_receive_file_ui_lbl_date">Date: </string>
+    <string name="rhizome_receive_file_ui_lbl_content">Content: </string>
     
     
     <!-- misc common strings -->

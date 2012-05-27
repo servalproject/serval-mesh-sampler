@@ -27,6 +27,7 @@ import java.util.Random;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -110,14 +111,13 @@ public class RhizomeAddFileActivity extends Activity implements OnClickListener 
 			
 			mWriter.close();
 			
-			// first version of the file (increase by 1 for each new version of the same file)
-			String mVersion = "0";
-			
 			// request that the file be added to rhizome
-			Intent mIntent = new Intent(getString(R.string.system_serval_rhizome_add_file_action));
-			mIntent.putExtra(getString(R.string.system_serval_rhizome_intent_path_extra), mOutputFile);
-			mIntent.putExtra(getString(R.string.system_serval_rhizome_intent_version_extra), mVersion);
-			mIntent.putExtra(getString(R.string.system_serval_rhizome_intent_author_extra), getString(R.string.main_ui_lbl_title));
+			Intent mIntent = new Intent("org.servalproject.rhizome.ADD_FILE");
+			
+			mIntent.putExtra("path", mOutputFile);
+			//optional;
+			//mIntent.putExtra("version", "0");
+			
 			startService(mIntent);
 			
 			Toast.makeText(this, String.format(getString(R.string.rhizome_add_file_toast_copy_success), mOutputFile), Toast.LENGTH_LONG).show();

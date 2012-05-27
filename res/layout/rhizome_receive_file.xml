@@ -94,15 +94,15 @@
 				android:layout_width="fill_parent" 
 				android:layout_height="wrap_content">
 				
-			    <TextView android:id="@+id/rhizome_receive_file_ui_lbl_path"
+			    <TextView android:id="@+id/rhizome_receive_file_ui_lbl_name"
 					android:layout_width="fill_parent" 
 					android:layout_height="wrap_content"
-					android:text="@string/rhizome_receive_file_ui_lbl_path"
+					android:text="@string/rhizome_receive_file_ui_lbl_name"
 					android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
 					android:layout_marginLeft="@dimen/ui_elem_margin_left"
 					android:layout_marginRight="@dimen/ui_elem_margin_right" />
 			    
-			    <TextView android:id="@+id/rhizome_receive_file_ui_lbl_path_value"
+			    <TextView android:id="@+id/rhizome_receive_file_ui_lbl_name_value"
 					android:layout_width="fill_parent" 
 					android:layout_height="wrap_content"
 					android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
@@ -136,15 +136,15 @@
 				android:layout_width="fill_parent" 
 				android:layout_height="wrap_content">
 				
-			    <TextView android:id="@+id/rhizome_receive_file_ui_lbl_author"
+			    <TextView android:id="@+id/rhizome_receive_file_ui_lbl_date"
 					android:layout_width="fill_parent" 
 					android:layout_height="wrap_content"
-					android:text="@string/rhizome_receive_file_ui_lbl_author"
+					android:text="@string/rhizome_receive_file_ui_lbl_date"
 					android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
 					android:layout_marginLeft="@dimen/ui_elem_margin_left"
 					android:layout_marginRight="@dimen/ui_elem_margin_right" />
 			    
-			    <TextView android:id="@+id/rhizome_receive_file_ui_lbl_author_value"
+			    <TextView android:id="@+id/rhizome_receive_file_ui_lbl_date_value"
 					android:layout_width="fill_parent" 
 					android:layout_height="wrap_content"
 					android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
@@ -153,6 +153,26 @@
 				
 			</TableRow>
 			
+			<TableRow android:id="@+id/rhizome_receive_file_ui_tbl_row_6"
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content">
+				
+			    <TextView android:id="@+id/rhizome_receive_file_ui_lbl_content"
+					android:layout_width="fill_parent" 
+					android:layout_height="wrap_content"
+					android:text="@string/rhizome_receive_file_ui_lbl_content"
+					android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+					android:layout_marginLeft="@dimen/ui_elem_margin_left"
+					android:layout_marginRight="@dimen/ui_elem_margin_right" />
+			    
+			    <TextView android:id="@+id/rhizome_receive_file_ui_lbl_content_value"
+					android:layout_width="fill_parent" 
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="@dimen/ui_elem_margin_bottom"
+					android:layout_marginLeft="@dimen/ui_elem_margin_left"
+					android:layout_marginRight="@dimen/ui_elem_margin_right" />
+				
+			</TableRow>
 		</TableLayout>
 	</ScrollView>
 	
